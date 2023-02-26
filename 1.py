@@ -2,15 +2,17 @@ import matplotlib as mpl
 import matplotlib.pyplot as plt
 import numpy as np
 
-plt.title('1')
-plt.xlabel('Угол в Радианах')
-plt.ylabel('Синус / Косинус')
-x1 = np.linspace(0, 2 * np.pi, 100)
-y1 = np.sin(x1)
-x2 = np.linspace(0, 2 * np.pi, 100)
-y2 = np.cos(x2)
-plt.plot(x1, y1)
-plt.plot(x2, y2)
+
+fig = plt.figure(figsize=(6, 4))
+ax = fig.add_subplot()
+ax.set(xlabel='Угол в Радианах', ylabel='Синус/Косинус', title='Графики синуса/косинуса')
+x = np.linspace(0, 2 * np.pi, 7)
+y = np.linspace(-1, 1, 9)
+ax.set_xticks(x)
+ax.set_yticks(y)
 plt.axis([-0.4, 6.5, -1.1, 1.1])
 plt.grid()
+z = np.linspace(0, 2 * np.pi, 100)
+ax.plot(z, np.sin(z))
+ax.plot(z, np.cos(z))
 plt.show()
